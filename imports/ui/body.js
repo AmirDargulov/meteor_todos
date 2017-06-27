@@ -11,6 +11,7 @@ import './task.js';
 
 Template.body.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
+  this.pr_state = new ReactiveDict();
   Meteor.subscribe('tasks');
 });
 
@@ -20,6 +21,11 @@ Template.body.helpers({
     if (instance.state.get('hideCompleted')) {
       return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
     }
+    
+    if (instance.pr_state.get('ByPriority')) {
+      return Tasks.find({}, { sort: { priority: -1 } } );
+    }
+
     return Tasks.find({}, { sort: { createdAt: -1 } });
   },
   incompleteCount() {
@@ -45,5 +51,9 @@ Template.body.events({
   'change .hide-completed input'(event, instance) {
     instance.state.set('hideCompleted', event.target.checked);
   },
+  'change .by-priority'(event, instance) {
+    instance.pr_state.set('ByPriority', event.target.checked);
+  }
+  
 });  
- 
+

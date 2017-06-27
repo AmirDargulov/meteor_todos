@@ -2,18 +2,24 @@
   <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
     <button class="delete">&times;</button>
  
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
     
     {{#if isOwner}}
-      <button class="toggle-private">
-        {{#if private}}
-          Private
-        {{else}}
-          Public
-        {{/if}}
-      </button>
+        <button class="toggle-private">
+          {{#if private}}
+            Private
+          {{else}}
+            Public
+          {{/if}}
+        </button>
+     
+        <div class="btn-group">
+          <button class="priority1" id="priority1">1</button>
+          <button class="priority2" id="priority2">2</button>
+          <button class="priority3" id="priority3">3</button>
+        </div>   
     {{/if}}
- 
+
     <span class="text"><strong>{{username}}</strong> - {{text}}</span>
   </li>
 </template>

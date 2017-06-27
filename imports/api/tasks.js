@@ -28,6 +28,7 @@ Meteor.methods({
       createdAt: new Date(),
       owner: Meteor.userId(),
       username: Meteor.user().username,
+      priority: 1,
     });
   },
   'tasks.remove'(taskId) {
@@ -63,6 +64,19 @@ Meteor.methods({
     }
 
     Tasks.update(taskId, { $set: {private: setToPrivate}});
+  },
+  'tasks.setPriority'(taskId, prioritynum) {
+    check(taskId, String);
+    check(prioritynum, Number);
+    
+    const task = Tasks.findOne(taskId);
+   
+    if (task.owner !== Meteor.userId()) {
+      throw new Meteor.Error('not-authorized');
+    }
+   
+    Tasks.update(taskId, { $set: { priority: prioritynum}});
+    console.log(prioritynum);
   },
 });
 

@@ -19,4 +19,15 @@ Template.task.events({
   'click .toggle-private'() {
     Meteor.call('tasks.setPrivate', this._id, !this.private); 
   },
+  'click .priority1'() {
+    Meteor.call('tasks.setPriority', this._id, 1);
+  },
+
+  'click .priority2'() {
+    Meteor.call('tasks.setPriority', this._id, 2);
+  },
+
+  'click .priority3'() {
+    Meteor.call('tasks.setPriority', this._id, 3);
+  },
 });

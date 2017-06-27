@@ -42,6 +42,27 @@ h1 {
   display: inline-block;
   margin-right: 1em;
 }
+
+#priority1 {
+ background-color: blue;
+}
+
+#priority2 {
+ background-color: green;
+}
+
+.btn-group button {
+    background-color: red;
+    margin-top: 1px;
+    color: white; /* White text */
+    padding: 2px 2px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
  
 form {
   margin-top: 10px;
@@ -58,6 +79,7 @@ form {
   padding-right: 80px;
   font-size: 1em;
 }
+
  
 .new-task input:focus{
   outline: 0;
@@ -105,9 +127,14 @@ li.private {
 header .hide-completed {
   float: right;
 }
+
+header .by-priority {
+  float: right;
+  margin-right: 4px;
+}
  
 .toggle-private {
-  margin-left: 5px;
+  float: left;
 }
  
 @media (max-width: 600px) {

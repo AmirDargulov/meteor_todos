@@ -1,15 +1,19 @@
 <body>
   <div class="container">
     <header>
-       <h1>ToDo List ({{incompleteCount}})</h1>
-   
+      <h1>ToDo List ({{incompleteCount}})</h1>
        <label class = "hide-completed">
          <input type="checkbox" />
-         Hide Completed Tasks
+         Hide Completed Task
+       </label>
+ 
+       <label class = "by-priority">
+         <input type="checkbox" />
+         Sort By Priority
        </label>
 
        {{> loginButtons}}
-       
+      
        {{#if currentUser}}
          <form class="new-task">
            <input type="text" name="text" placeholder="Type to add new tasks" />
