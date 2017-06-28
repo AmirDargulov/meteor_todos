@@ -48,13 +48,17 @@ h1 {
 }
 
 #priority2 {
- background-color: green;
+ background-color: yellow;
+}
+
+#priority3 {
+ background-color: red;
 }
 
 .btn-group button {
     background-color: red;
     margin-top: 1px;
-    color: white; /* White text */
+    color: black; /* White text */
     padding: 2px 2px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     float: left; /* Float the buttons side by side */

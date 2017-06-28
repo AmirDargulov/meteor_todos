@@ -20,9 +20,10 @@ Template.body.helpers({
     const instance = Template.instance();
     if (instance.state.get('hideCompleted')) {
       if (instance.pr_state.get('ByPriority')) {
-        return Tasks.find({checked: { $ne: true}, owner: Meteor.userId()}, { sort: {createdAt: -1, priority: -1}});
+        return Tasks.find({checked: { $ne: true}, owner: Meteor.userId()}, { sort: {priority: -1, createdAt: -1}});
+      } else {
+        return Tasks.find({owner: Meteor.userId(),  checked: { $ne: true } }, { sort: { createdAt: -1 } });
       }
-      return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
     }
     
     if (instance.pr_state.get('ByPriority')) {

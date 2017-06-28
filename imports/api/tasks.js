@@ -28,7 +28,7 @@ Meteor.methods({
       createdAt: new Date(),
       owner: Meteor.userId(),
       username: Meteor.user().username,
-      priority: 1,
+      priority: 0,
     });
   },
   'tasks.remove'(taskId) {
