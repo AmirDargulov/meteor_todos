@@ -66,6 +66,7 @@ Meteor.methods({
     Tasks.update(taskId, { $set: {private: setToPrivate}});
   },
   'tasks.setPriority'(taskId, prioritynum) {
+    
     check(taskId, String);
     check(prioritynum, Number);
     
