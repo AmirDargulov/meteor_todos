@@ -16,6 +16,7 @@ body {
  
   font-size: 14px;
 }
+
  
 .container {
   max-width: 600px;
@@ -44,7 +45,7 @@ h1 {
 }
 
 #priority1 {
- background-color: blue;
+ background-color: green;
 }
 
 #priority2 {
@@ -55,13 +56,30 @@ h1 {
  background-color: red;
 }
 
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+
 .btn-group button {
+    width: 17.5px;
+    height: 17.5px;
+    text-align: center;
+    padding: 3px 0;
+    font-size: 12px;
+    line-height: 1.0;
+    border-radius: 50%;
+    margin-left: 4px;
     background-color: red;
-    margin-top: 1px;
-    color: black; /* White text */
-    padding: 2px 2px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
+    
+    /*color: black;*/
+    cursor: pointer;
+    float: left;
 }
 
 .btn-group button:not(:last-child) {
